@@ -24,7 +24,11 @@ function addTodo(event){
 
     //Create LI
     const newTodo = document.createElement("li");
-    newTodo.innerText = todoInput.value; //receive input (and add it to list when pressing the submit button)
+    if(todoInput.value == ""){ 
+        return; //this way if nothing is typed, nothing happens
+    }else{
+        newTodo.innerText = todoInput.value; //receive input (and add it to list when pressing the submit button)
+    }
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
 
